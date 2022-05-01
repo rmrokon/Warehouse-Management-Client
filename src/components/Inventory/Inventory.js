@@ -7,9 +7,9 @@ const Inventory = () => {
     return (
         <div>
             <h3 className='text-center text-2xl font-bold text-gray-600'>Items in Inventory</h3>
-            <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-4'>
+            <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-4 m-10'>
                 {
-                    products.map(product => <SingleProduct key={product._id} {...product}></SingleProduct>)
+                    products.slice(0, 6).map(product => <SingleProduct key={product._id} {...product}></SingleProduct>)
                 }
             </div>
         </div>

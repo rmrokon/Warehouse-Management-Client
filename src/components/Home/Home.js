@@ -5,7 +5,7 @@ import Footer from '../Footer/Footer';
 import Inventory from '../Inventory/Inventory';
 
 const Home = () => {
-    const products = useProducts();
+
     return (
         <div>
             <h3>This is home:
