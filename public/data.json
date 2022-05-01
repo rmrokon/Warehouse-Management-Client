@@ -1,0 +1,74 @@
+[
+    {
+        "img": "https://www.startech.com.bd/image/cache/catalog/laptop/msi/modern-14-b11m/modern-14-b11m-500x500.jpg",
+        "price": 1090,
+        "name": "MSI Modern 14 B11SB",
+        "quantity": 87,
+        "supplier": "MSI",
+        "description": "High configuration gaming laptop. Ideal for heavy gaming and graphics design. Unique design with ultra thin body!"
+    },
+    {
+        "img": "https://www.startech.com.bd/image/cache/catalog/laptop/apple/macbook-air/MGN73/macbook-mgn73Zp-a-500x500.jpg",
+        "price": 1274,
+        "name": "Apple MacBook Air 13.3-Inch",
+        "quantity": 54,
+        "supplier": "Apple",
+        "description": "Apple's thinnest, lightest notebook, completely transformed by the Apple M1 chip. CPU speeds up to 3.5x faster. GPU speeds up to 5x faster. Our most advanced Neural Engine for up to 9x faster machine learning. The longest battery life ever in a MacBook Air. And a silent, fanless design. "
+    },
+    {
+        "img": "https://www.startech.com.bd/image/cache/catalog/laptop/apple/macbook-pro-14/macbook-pro-14-10-500x500.jpg",
+        "price": 109,
+        "name": "Apple MacBook Pro 14-Inch",
+        "quantity": 90,
+        "supplier": "Apple",
+        "description": "Apple MacBook Pro 14-Inch powered by Apple M1 Pro Chip (8-core CPU with 6 performance cores and 2 efficiency cores, 14-core GPU, 16-core Neural Engine, 200GB/s memory bandwidth) for groundbreaking performance and amazing battery life. A stunning14.2-inch (diagonal) Liquid Retina XDR display;1 3024-by-1964 native resolution at 254 pixels per inch and all the ports you need, that delivers Extreme Dynamic Range and incredible contrast ratio."
+    },
+    {
+        "img": "https://www.startech.com.bd/image/cache/catalog/laptop/apple/macbook-pro-14/macbook-pro-14-02-500x500.jpg",
+        "price": 961,
+        "name": "Apple MacBook Pro 14-Inch M1 Pro Chip",
+        "quantity": 77,
+        "supplier": "Apple",
+        "description": "Apple MacBook Pro 14-Inch powered by Apple M1 Pro Chip (8-core CPU with 6 performance cores and 2 efficiency cores, 14-core GPU, 16-core Neural Engine, 200GB/s memory bandwidth) for groundbreaking performance and amazing battery life. A stunning14.2-inch (diagonal) Liquid Retina XDR display;1 3024-by-1964 native resolution at 254 pixels per inch and all the ports you need, that delivers Extreme Dynamic Range and incredible contrast ratio. Get unbelievable detail in shadows, deeper blacks and more vibrant colours than ever before."
+    },
+    {
+        "img": "https://www.startech.com.bd/image/cache/catalog/laptop/acer/swift-5/swift-5-001-500x500.jpg",
+        "price": 1344,
+        "name": "Acer Swift 5 SF514-55TA",
+        "quantity": 166,
+        "supplier": "Acer",
+        "description": "Acer Swift 5 SF514-55TA Laptop comes with Intel Core i5-1135G7 Processor (8M Cache, 2.40 GHz up to 4.20 GHz), 8GB 3200MHz DDR4 RAM, 512GB SSD, Intel Iris Xe Graphics and Windows 10 Home 64-bit."
+    },
+    {
+        "img": "https://www.startech.com.bd/image/cache/catalog/laptop/acer/aspire-7/aspire-7-01-500x500.jpg",
+        "price": 1324,
+        "name": "Acer Gaming Aspire 7 A715-42G-R0DS",
+        "quantity": 35,
+        "supplier": "Acer",
+        "description": "Acer Aspire 7 A715-42G-R0DS Gaming Laptop featured with AMD Ryzen 5 5500U (6 Core, L2-3MB, L3-SMB Cashe, 2.1GHz Up to 4.0GHz) Processor, 15.6 inch (39.6 cm) FHD (1920 x 1080), LCD, ComfyView (Matte), In-plane Switching (IPS) Technology Display, 8GB DDR4 RAM, 512GB NVMe PCIe SSD and NVIDIA GTX 1650 4GB GDDR6 Graphics with Windows 10 Home 64-bit Operating System."
+    },
+    {
+        "img": "https://www.startech.com.bd/image/cache/catalog/laptop/razer/blade-15-advanced-model/blade-15-advanced-model-01-500x500.jpg",
+        "price": 1551,
+        "name": "Razer Blade 15 Advanced Model i7",
+        "quantity": 40,
+        "supplier": "Razer",
+        "description": "Razer Blade 15 Advanced Model Laptop powered by 11th Gen Intel Core i7-11800H 8 Cores (2.3GHz / 4.6GHz) with NVIDIA GeForce Graphics. This Razer Gaming Laptop featured with up to NVIDIA GeForce RTX3080 8GB GDDR6 VRAM Graphics, 1TB SSD (M.2 NVMe PCIe 4.0 x4) + Open M.2 PCIe 4.0 x4 Slot for easy expansion, 32GB DDR4 3200MHz RAM and up to 15.6 inch FHD (1920 x 1080) 360Hz, 100% SRGB, 2ms, individually factory calibrated for an obscene competitive advantage in high-FPS games."
+    },
+    {
+        "img": "https://www.startech.com.bd/image/cache/catalog/laptop/lenovo/ideapad-slim-3i/ideapad-slim-3i-0010-500x500.jpg",
+        "price": 57,
+        "name": "Lenovo IdeaPad Slim 3i 15IGL",
+        "quantity": 10,
+        "supplier": "Lenovo",
+        "description": "The Lenovo IdeaPad Slim 3i 15IGL comes with Intel Celeron N4020 (4M Cache, 1.10 GHz up to 2.80 GHz) and 4GB DDR4 2400MHz RAM. It also comes with a 1TB 5400rpm 2.5 inch HDD to store all your important data. "
+    },
+    {
+        "img": "https://www.startech.com.bd/image/cache/catalog/laptop/lenovo/ideapad-3/ideapad-3-01102-500x500.jpg",
+        "price": 57,
+        "name": "Lenovo IdeaPad 3 Ryzen 5",
+        "quantity": 16,
+        "supplier": "Lenovo",
+        "description": "Lenovo IdeaPad 3 features with AMD Ryzen 5 5500U Processor (8M Cache, 2.1GHz up to 4.0GHz, 6 cores) and 8GB 3200MHZ RAM ( 2 x 4GB ). It comes with 512GB NVMe PCIe SSD storage. And it also features Integrated AMD Radeon Graphics graphics for a smooth gaming experience. AMD SoC (System on Chip) platform has been used in this gaming laptop."
+    }
+]
