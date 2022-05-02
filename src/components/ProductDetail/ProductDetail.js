@@ -6,15 +6,33 @@ const ProductDetail = () => {
     const { productId } = useParams();
     const [product] = useProductDetail(productId);
     const { _id, name, img, description, supplier, price, quantity } = product;
-    const [newQuantity, setNewQuantity] = useState(quantity)
 
-    // We have to make this route a protected route
-
+    const [updatedQuantity, setUpdatedQuantity] = useState(quantity);
 
 
-    const handleDecreaseQuantity = () => {
+    const handleDecreaseQuantity = (id) => {
+
+        const { quantity, ...rest } = product;
+        const previousQuantity = quantity;
+        setUpdatedQuantity(previousQuantity - 1)
+        const updatedProduct = { updatedQuantity, ...rest }
+
+        fetch(`http://localhost:5000/updateProduct/${id}`, {
+            method: 'PUT',
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(updatedProduct)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+            })
+        console.log(updatedQuantity);
 
     }
+    // console.log(updatedQuantity);
+    // console.log(quantity, 'type: ', typeof (quantity));
 
     return (
         <div>
@@ -25,7 +43,7 @@ const ProductDetail = () => {
                     <h4 className='mb-2'>Product Id: {_id}</h4>
                     <h4 className='font-bold mb-2'>Price: ${price}</h4>
                     <h4 className='mb-2 text-xl'>Stock Available: {quantity}</h4>
-                    <button onClick={handleDecreaseQuantity} className='bg-green-400 p-1 rounded text-white'>Delivered</button>
+                    <button onClick={() => handleDecreaseQuantity(_id)} className='bg-green-400 p-1 rounded text-white'>Delivered</button>
                     <h4 className='mb-2'>Supplier: {supplier}</h4>
                     <p>{description}</p>
                 </div>
