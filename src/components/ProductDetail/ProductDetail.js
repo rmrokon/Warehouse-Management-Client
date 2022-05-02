@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import useProductDetail from '../../hooks/useProductDetail';
 
 const ProductDetail = () => {
@@ -35,8 +35,8 @@ const ProductDetail = () => {
     // console.log(quantity, 'type: ', typeof (quantity));
 
     return (
-        <div>
-            <div className='border-2 rounded-md'>
+        <div className='bg-red-400'>
+            <div className='border-2 rounded-md bg-blue-300 w-6/12 mx-auto'>
                 <img className='border-2 w-1/4 rounded-md mx-auto my-3' src={img} alt="" />
                 <div className='p-3 text-center'>
                     <h3 className='font-bold mb-3'>{name}</h3>
@@ -47,7 +47,11 @@ const ProductDetail = () => {
                     <h4 className='mb-2'>Supplier: {supplier}</h4>
                     <p>{description}</p>
                 </div>
-
+            </div>
+            <div className='flex justify-center my-10'>
+                <Link to={'/manageInventory'}>
+                    <button className='bg-pink-600 p-3 rounded-lg text-white mt-2'>Manage Inventories</button>
+                </Link>
             </div>
         </div>
     );
