@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import useProductDetail from '../../hooks/useProductDetail';
 
@@ -7,15 +7,12 @@ const ProductDetail = () => {
     const [product] = useProductDetail(productId);
     const { _id, name, img, description, supplier, price, quantity } = product;
 
-    const [updatedQuantity, setUpdatedQuantity] = useState(quantity);
-
-
     const handleDecreaseQuantity = (id) => {
-
         const { quantity, ...rest } = product;
-        const previousQuantity = quantity;
-        setUpdatedQuantity(previousQuantity - 1)
-        const updatedProduct = { updatedQuantity, ...rest }
+        const previousQuantity = parseInt(quantity);
+        const currentQuantity = previousQuantity - 1;
+
+        const updatedProduct = { currentQuantity, ...rest }
 
         fetch(`http://localhost:5000/updateProduct/${id}`, {
             method: 'PUT',
@@ -26,13 +23,10 @@ const ProductDetail = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                console.log(data);
             })
-        console.log(updatedQuantity);
-
     }
-    // console.log(updatedQuantity);
-    // console.log(quantity, 'type: ', typeof (quantity));
+
 
     return (
         <div className='bg-red-400'>
