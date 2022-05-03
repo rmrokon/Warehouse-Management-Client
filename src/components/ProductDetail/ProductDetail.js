@@ -1,17 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import useProductDetail from '../../hooks/useProductDetail';
 
 const ProductDetail = () => {
     const { productId } = useParams();
-    const [product] = useProductDetail(productId);
+    const [product, setProduct] = useProductDetail(productId);
     const { _id, name, img, description, supplier, price, quantity } = product;
 
     const handleDecreaseQuantity = (id) => {
         const { quantity, ...rest } = product;
         const previousQuantity = parseInt(quantity);
         const currentQuantity = previousQuantity - 1;
-
         const updatedProduct = { currentQuantity, ...rest }
 
         fetch(`http://localhost:5000/updateProduct/${id}`, {
@@ -25,6 +24,8 @@ const ProductDetail = () => {
             .then(data => {
                 console.log(data);
             })
+
+
     }
 
 

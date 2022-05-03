@@ -15,7 +15,7 @@ const useProducts = () => {
         getProducts();
     }, [])
 
-    return [products];
+    return [products, setProducts];
 };
 
 export default useProducts;

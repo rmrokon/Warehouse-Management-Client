@@ -10,7 +10,7 @@ const useProductDetail = (id) => {
         }
         getProductDetail();
     }, [id])
-    return [product]
+    return [product, setProduct]
 };
 
 export default useProductDetail;
