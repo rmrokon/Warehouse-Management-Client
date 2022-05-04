@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import './Login.css';
 
@@ -15,22 +15,26 @@ const Login = () => {
     ] = useSignInWithEmailAndPassword(auth);
     const [signInWithGoogle, userGoogle, loadingGoogle, errorGoogle] = useSignInWithGoogle(auth);
     const navigate = useNavigate();
+    const location = useLocation();
 
-    const handleLogin = (e) => {
+    const from = location.state?.from?.pathname || '/';
+
+    const handleLogin = async (e) => {
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
-        signInWithEmailAndPassword(email, password);
-        navigate('/home');
+        await signInWithEmailAndPassword(email, password);
+        navigate(from, { replace: true });
     }
 
-    const handleGoogleSignIn = () => {
-        signInWithGoogle();
+    const handleGoogleSignIn = async () => {
+        await signInWithGoogle();
+        navigate(from, { replace: true });
     }
 
-    if (user || userGoogle) {
-        navigate('/home');
-    }
+    // if (user || userGoogle) {
+    //     navigate('/home');
+    // }
     return (
         <div>
             <h3 className='text-2xl text-center underline font-thin text-pink-600'>Login</h3>
