@@ -1,8 +1,8 @@
 import React, { useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import './Register.css';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 
 const Register = () => {
     const [agree, setAgree] = useState(false);
@@ -12,7 +12,9 @@ const Register = () => {
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
+    const [signInWithGoogle, userGoogle, loadingGoogle, errorGoogle] = useSignInWithGoogle(auth);
     const formRef = useRef();
+    const navigate = useNavigate();
 
     const handleRegister = async (e) => {
         e.preventDefault();
@@ -29,6 +31,14 @@ const Register = () => {
             formRef.current.reset();
         }
 
+    }
+
+    const handleGoogleSignIn = () => {
+        signInWithGoogle();
+    }
+
+    if (user || userGoogle) {
+        navigate('/home');
     }
     return (
         <div className='mb-5'>
@@ -56,7 +66,7 @@ const Register = () => {
                 <div className='line-div' />
             </div>
             <div className='flex justify-center'>
-                <button className='bg-pink-600 p-3 rounded-lg text-white mt-2 w-1/3'>Sign in With Google</button>
+                <button onClick={handleGoogleSignIn} className='bg-pink-600 p-3 rounded-lg text-white mt-2 w-1/3'>Sign in With Google</button>
             </div>
         </div>
     );
