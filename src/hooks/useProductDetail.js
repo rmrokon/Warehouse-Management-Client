@@ -9,7 +9,7 @@ const useProductDetail = (id) => {
                 .then(response => setProduct(response.data))
         }
         getProductDetail();
-    }, [id])
+    }, [id, product])
     return [product, setProduct]
 };
 

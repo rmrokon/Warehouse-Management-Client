@@ -1,24 +1,18 @@
-import React, { useState } from 'react';
-import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
+import React, { useRef } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import useProductDetail from '../../hooks/useProductDetail';
 
 const ProductDetail = () => {
     const { productId } = useParams();
     const [product, setProduct] = useProductDetail(productId);
     const { _id, name, img, description, supplier, price, quantity } = product;
-
-    // const previousQuantity = product[quantity];
-    // const [displayQuantity, setDisplayQuantity] = useState(0);
-
-
-    // setDisplayQuantity(parseInt(quantity));
+    const formRef = useRef();
 
 
     const handleDecreaseQuantity = (id) => {
         const { quantity, ...rest } = product;
         const previousQuantity = parseInt(quantity);
         const currentQuantity = previousQuantity - 1;
-        // setDisplayQuantity(currentQuantity);
         const updatedProduct = { currentQuantity, ...rest }
 
         fetch(`http://localhost:5000/updateProduct/${id}`, {
@@ -30,10 +24,10 @@ const ProductDetail = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+
             })
 
-        // setProduct(updatedProduct);
+        setProduct(updatedProduct);
 
     }
 
@@ -54,7 +48,7 @@ const ProductDetail = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                formRef.current.reset();
             })
     }
 
@@ -75,7 +69,7 @@ const ProductDetail = () => {
                     </div>
                 </div>
                 <div className='flex justify-center place-items-center my-5'>
-                    <form className='w-full text-center' onSubmit={handleUpdateQuantity}>
+                    <form className='w-full text-center' onSubmit={handleUpdateQuantity} ref={formRef}>
                         <input className='border w-2/3 rounded-md text-center h-16' type="number" name="quantity" placeholder='Enter Quantity' /> <br />
                         <input className='bg-pink-600 p-3 rounded-lg text-white mt-2' type="submit" value="Update Quantity" />
                     </form>

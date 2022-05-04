@@ -1,19 +1,18 @@
 import React from 'react';
 import Logo from '../../images/imanage-logo.png'
-import Link from '../Link/Link';
+import Links from '../Link/Links';
+
 import './Header.css';
 
 const Header = () => {
     return (
-        <div>
-            <div className='flex flex-row justify-around p-5'>
-
-                <div className='basis-1/4'>
-                    <img className='logo' src={Logo} alt="" />
+        <div className='shadow-md w-full sticky top-0 left-0'>
+            <div className='md:flex items-center justify-between bg-white py-4 md:px-10 px-7'>
+                <div className='font-bold text-2xl cursor-pointer'>
+                    iManage
                 </div>
-
-                <div className='basis-1/4'>
-                    <Link></Link>
+                <div>
+                    <Links></Links>
                 </div>
             </div>
         </div>
