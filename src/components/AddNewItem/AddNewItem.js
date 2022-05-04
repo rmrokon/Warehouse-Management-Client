@@ -26,7 +26,7 @@ const AddNewItem = () => {
             .then(res => res.json())
             .then(data => {
                 formRef.current.reset();
-
+                toast("Product Added!")
                 console.log(data)
             })
     }

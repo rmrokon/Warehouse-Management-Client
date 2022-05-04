@@ -3,10 +3,13 @@ import { Link, useParams } from 'react-router-dom';
 import useProductDetail from '../../hooks/useProductDetail';
 
 const ProductDetail = () => {
-    // const [displayQuantity, setDisplayQuantity] = useState(0);
     const { productId } = useParams();
     const [product, setProduct] = useProductDetail(productId);
     const { _id, name, img, description, supplier, price, quantity } = product;
+    // const previousQuantity = product[quantity];
+    // const [displayQuantity, setDisplayQuantity] = useState(0);
+
+
     // setDisplayQuantity(parseInt(quantity));
 
 
@@ -14,6 +17,7 @@ const ProductDetail = () => {
         const { quantity, ...rest } = product;
         const previousQuantity = parseInt(quantity);
         const currentQuantity = previousQuantity - 1;
+        // setDisplayQuantity(currentQuantity);
         const updatedProduct = { currentQuantity, ...rest }
 
         fetch(`http://localhost:5000/updateProduct/${id}`, {
@@ -28,6 +32,7 @@ const ProductDetail = () => {
                 console.log(data);
             })
 
+        // setProduct(updatedProduct);
 
     }
 

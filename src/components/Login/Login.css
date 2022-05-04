@@ -1,0 +1,19 @@
+.or-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.line-div {
+    border: 1px solid #95A0A7;
+    background-color: #95A0A7;
+    width: 145px;
+    height: 0px;
+}
+
+.or {
+    margin: 0 10px;
+    font-weight: 400;
+    font-size: 17px;
+    color: #95A0A7;
+}
