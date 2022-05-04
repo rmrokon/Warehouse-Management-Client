@@ -27,21 +27,20 @@ const AddNewItem = () => {
             .then(data => {
                 formRef.current.reset();
                 toast("Product Added!")
-                console.log(data)
             })
     }
     return (
         <div>
             <h3 className='text-2xl text-center underline font-thin text-pink-600'>Fill up the form to add new product!</h3>
-            <div className='flex justify-center place-items-center my-5'>
+            <div className='flex justify-center place-items-center my-5 w-full'>
                 <form className='w-full text-center' onSubmit={handleAddNewItem} ref={formRef}>
-                    <input className='' type="text" name="name" placeholder='Product Name' /> <br />
-                    <input className='' type="number" name="price" placeholder='Price in USD' /> <br />
-                    <input className='' type="number" name="stock" placeholder='Stock Available' /> <br />
-                    <input className='' type="text" name="supplier" placeholder='Supplier Name' /> <br />
-                    <input className='' type="text" name="image" placeholder='Image Link' /> <br />
-                    <textarea className='' name="description" placeholder='Description'></textarea> <br />
-                    <input className='bg-pink-600 p-3 rounded-lg text-white mt-2' type="submit" value="+ Add New Product" />
+                    <input className='w-1/2 md:w-1/3' type="text" name="name" placeholder='Product Name' /> <br />
+                    <input className='w-1/2 md:w-1/3' type="number" name="price" placeholder='Price in USD' /> <br />
+                    <input className='w-1/2 md:w-1/3' type="number" name="stock" placeholder='Stock Available' /> <br />
+                    <input className='w-1/2 md:w-1/3' type="text" name="supplier" placeholder='Supplier Name' /> <br />
+                    <input className='w-1/2 md:w-1/3' type="text" name="image" placeholder='Image Link' /> <br />
+                    <textarea className='w-1/2 md:w-1/3' name="description" placeholder='Description'></textarea> <br />
+                    <input className='bg-pink-600 p-3 rounded-lg text-white mt-2 w-10/12 md:w-1/3' type="submit" value="+ Add Product" />
                 </form>
             </div>
         </div>

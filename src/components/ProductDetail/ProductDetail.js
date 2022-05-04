@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
 import useProductDetail from '../../hooks/useProductDetail';
 
 const ProductDetail = () => {
     const { productId } = useParams();
     const [product, setProduct] = useProductDetail(productId);
     const { _id, name, img, description, supplier, price, quantity } = product;
+
     // const previousQuantity = product[quantity];
     // const [displayQuantity, setDisplayQuantity] = useState(0);
 
