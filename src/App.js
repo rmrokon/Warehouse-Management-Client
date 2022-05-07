@@ -13,6 +13,7 @@ import NotFound from "./components/NotFound/NotFound";
 import ManageOrders from "./components/ManageOrders/ManageOrders";
 import AddOrders from "./components/AddOrders/AddOrders";
 import Charts from "./components/Charts/Charts";
+import MyItems from "./components/MyItems/MyItems";
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
         <Route path="/manageOrders" element={<ManageOrders></ManageOrders>}></Route>
         <Route path="/addNewOrder" element={<AddOrders></AddOrders>}></Route>
         <Route path="/charts" element={<Charts></Charts>}></Route>
+        <Route path="/myItems" element={<MyItems></MyItems>}></Route>
       </Routes>
       <ToastContainer></ToastContainer>
     </div>
