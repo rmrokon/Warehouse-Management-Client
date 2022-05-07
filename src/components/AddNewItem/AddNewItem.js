@@ -16,7 +16,7 @@ const AddNewItem = () => {
 
         const newProduct = { name, price, quantity, supplier, img, description };
 
-        fetch("http://localhost:5000/addnewproduct", {
+        fetch("https://imanage24.herokuapp.com/addnewproduct", {
             method: 'POST',
             headers: {
                 "content-type": "application/json"

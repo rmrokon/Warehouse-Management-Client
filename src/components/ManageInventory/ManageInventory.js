@@ -9,7 +9,7 @@ const ManageInventory = () => {
     const handleDelete = (id) => {
         const confirmDelete = window.confirm("Are you sure you want delete the product?");
         if (confirmDelete) {
-            fetch(`http://localhost:5000/deleteProduct/${id}`, {
+            fetch(`https://imanage24.herokuapp.com/deleteProduct/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

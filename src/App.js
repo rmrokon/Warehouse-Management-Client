@@ -10,6 +10,9 @@ import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
 import RequireAuth from "./components/RequireAuth/RequireAuth";
 import NotFound from "./components/NotFound/NotFound";
+import ManageOrders from "./components/ManageOrders/ManageOrders";
+import AddOrders from "./components/AddOrders/AddOrders";
+import Charts from "./components/Charts/Charts";
 
 
 function App() {
@@ -29,6 +32,9 @@ function App() {
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
+        <Route path="/manageOrders" element={<ManageOrders></ManageOrders>}></Route>
+        <Route path="/addNewOrder" element={<AddOrders></AddOrders>}></Route>
+        <Route path="/charts" element={<Charts></Charts>}></Route>
       </Routes>
       <ToastContainer></ToastContainer>
     </div>

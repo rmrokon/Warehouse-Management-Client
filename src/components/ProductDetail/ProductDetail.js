@@ -15,7 +15,7 @@ const ProductDetail = () => {
         const currentQuantity = previousQuantity - 1;
         const updatedProduct = { currentQuantity, ...rest }
 
-        fetch(`http://localhost:5000/updateProduct/${id}`, {
+        fetch(`https://imanage24.herokuapp.com/updateProduct/${id}`, {
             method: 'PUT',
             headers: {
                 "content-type": "application/json"
@@ -39,7 +39,7 @@ const ProductDetail = () => {
         const currentQuantity = previousQuantity + parseInt(inputQuantity);
         const updatedProduct = { currentQuantity, ...rest }
 
-        fetch(`http://localhost:5000/updateProduct/${_id}`, {
+        fetch(`https://imanage24.herokuapp.com/updateProduct/${_id}`, {
             method: 'PUT',
             headers: {
                 "content-type": "application/json"

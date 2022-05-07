@@ -1,6 +1,6 @@
 import React from 'react';
 import Logo from '../../images/imanage-logo.png'
-import Links from '../Link/Links';
+import NavBar from '../NavBar/NavBar';
 
 import './Header.css';
 
@@ -12,7 +12,7 @@ const Header = () => {
                     iManage
                 </div>
                 <div>
-                    <Links></Links>
+                    <NavBar></NavBar>
                 </div>
             </div>
         </div>

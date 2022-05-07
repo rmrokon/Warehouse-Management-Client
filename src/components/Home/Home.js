@@ -1,8 +1,9 @@
 import React from 'react';
-import useProducts from '../../hooks/useProducts';
 import Banner from '../Banner/Banner';
+import Charts from '../Charts/Charts';
 import Footer from '../Footer/Footer';
 import Inventory from '../Inventory/Inventory';
+import Orders from '../Orders/Orders';
 
 const Home = () => {
 
@@ -10,6 +11,8 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <Inventory></Inventory>
+            <Orders></Orders>
+            <Charts></Charts>
             <Footer></Footer>
         </div>
     );

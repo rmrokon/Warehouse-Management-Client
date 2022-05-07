@@ -6,7 +6,7 @@ const useProducts = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
         const getProducts = async () => {
-            await axios.get('http://localhost:5000/products')
+            await axios.get('https://imanage24.herokuapp.com/products')
                 .then(response => {
                     setProducts(response.data)
                 })
