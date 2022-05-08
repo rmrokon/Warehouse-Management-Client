@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import useOrders from '../../hooks/useOrders';
-import AddOrders from '../AddOrders/AddOrders';
+import './Orders.css';
 
 const Orders = () => {
     const [orders] = useOrders();
@@ -26,7 +26,7 @@ const Orders = () => {
                 </thead>
                 <tbody>
                     {
-                        orders.map(order => <tr>
+                        orders.map(order => <tr key={order._id}>
                             <td>{order.clientName}</td>
                             <td>{order.productName}</td>
                             <td>{order.quantity}</td>

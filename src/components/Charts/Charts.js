@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import { Bar, BarChart, CartesianGrid, Legend, ReferenceLine, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import useOrders from '../../hooks/useOrders';
 import useProducts from '../../hooks/useProducts';
@@ -8,55 +8,11 @@ const Charts = () => {
     const [products] = useProducts();
     const [orders] = useOrders();
 
-    const data = [
-        {
-            name: 'Page A',
-            uv: 4000,
-            pv: 2400,
-            amt: 2400,
-        },
-        {
-            name: 'Page B',
-            uv: -3000,
-            pv: 1398,
-            amt: 2210,
-        },
-        {
-            name: 'Page C',
-            uv: -2000,
-            pv: -9800,
-            amt: 2290,
-        },
-        {
-            name: 'Page D',
-            uv: 2780,
-            pv: 3908,
-            amt: 2000,
-        },
-        {
-            name: 'Page E',
-            uv: -1890,
-            pv: 4800,
-            amt: 2181,
-        },
-        {
-            name: 'Page F',
-            uv: 2390,
-            pv: -3800,
-            amt: 2500,
-        },
-        {
-            name: 'Page G',
-            uv: 3490,
-            pv: 4300,
-            amt: 2100,
-        },
-    ];
-
     return (
-        <div className=''>
-            <h3>This is chart</h3>
+        <div className='grid grid-cols-1 md:grid-cols-2 my-5'>
+
             <div className='chart-container'>
+                <h3 className='text-xl text-pink-600 text-center'>Quantity Vs Price</h3>
                 <ResponsiveContainer width="100%" height="100%">
                     <BarChart
                         width={500}
@@ -81,11 +37,11 @@ const Charts = () => {
                     </BarChart>
                 </ResponsiveContainer>
             </div>
-            <h3>price vs order</h3>
-            <div className='chart-container'>
+            <div className='chart-container my-10'>
+                <h3 className='text-xl text-pink-600 text-center'>Orders</h3>
                 <ResponsiveContainer width="100%" height="100%">
                     <BarChart
-                        width={300}
+                        width={500}
                         height={300}
                         data={orders}
                         stackOffset="sign"
@@ -103,10 +59,10 @@ const Charts = () => {
                         <Legend />
                         <ReferenceLine y={0} stroke="#000" />
                         <Bar dataKey="quantity" fill="#8884d8" stackId="stack" />
-                        <Bar dataKey="price" fill="#82ca9d" stackId="stack" />
                     </BarChart>
                 </ResponsiveContainer>
             </div>
+
 
         </div>
     );

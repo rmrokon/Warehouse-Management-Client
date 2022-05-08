@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import useOrders from '../../hooks/useOrders';
+import './ManageOrders.css';
 
 const ManageOrders = () => {
     const [orders] = useOrders();
