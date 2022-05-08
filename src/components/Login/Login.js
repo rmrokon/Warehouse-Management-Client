@@ -28,7 +28,7 @@ const Login = () => {
         setEmail(e.target.email.value);
         const password = e.target.password.value;
         await signInWithEmailAndPassword(email, password);
-        const { data } = await axios.post("http://localhost:5000/login", { email })
+        const { data } = await axios.post("https://imanage24.herokuapp.com/login", { email })
         localStorage.setItem('accessToken', data.accessToken)
         navigate(from, { replace: true });
     }
