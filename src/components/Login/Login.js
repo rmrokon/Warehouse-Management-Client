@@ -1,12 +1,14 @@
-import React from 'react';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import React, { useState } from 'react';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 import './Login.css';
 
 
 const Login = () => {
+    const [email, setEmail] = useState('');
     const [
         signInWithEmailAndPassword,
         user,
@@ -14,6 +16,7 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
     const [signInWithGoogle, userGoogle, loadingGoogle, errorGoogle] = useSignInWithGoogle(auth);
+    const [sendPasswordResetEmail, sending, errorPassReset] = useSendPasswordResetEmail(auth);
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -21,7 +24,7 @@ const Login = () => {
 
     const handleLogin = async (e) => {
         e.preventDefault();
-        const email = e.target.email.value;
+        setEmail(e.target.email.value);
         const password = e.target.password.value;
         await signInWithEmailAndPassword(email, password);
         navigate(from, { replace: true });
@@ -32,17 +35,20 @@ const Login = () => {
         navigate(from, { replace: true });
     }
 
-    // if (user || userGoogle) {
-    //     navigate('/home');
-    // }
+    const handleForgotPass = async () => {
+        await sendPasswordResetEmail(email);
+        toast("Email Sent");
+    }
+
     return (
         <div>
             <h3 className='text-2xl text-center underline font-thin text-pink-600'>Login</h3>
             <div className='flex justify-center place-items-center my-5'>
                 <form className='w-full text-center' onSubmit={handleLogin}>
-                    <input className='' type="email" name="email" placeholder='Enter Email' /> <br />
+                    <input className='' type="email" name="email" placeholder='Enter Email' onBlur={(e) => setEmail(e.target.value)} /> <br />
                     <input className='' type="password" name="password" placeholder='Enter Password' /> <br />
                     <p>New to imanage? <Link className='text-blue-600' to={'/register'}>Create New Account</Link></p>
+                    <p className='text-blue-600 cursor-pointer' onClick={handleForgotPass}>Forgot Password?</p>
                     {error && <p>{error.message}</p>}
                     <input className='bg-pink-600 p-3 rounded-lg text-white mt-2' type="submit" value="Login" />
                 </form>

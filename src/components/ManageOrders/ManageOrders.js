@@ -1,15 +1,23 @@
+import { XIcon } from '@heroicons/react/solid';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import useOrders from '../../hooks/useOrders';
 import './ManageOrders.css';
 
 const ManageOrders = () => {
-    const [orders] = useOrders();
-    const [delivered, setDelivered] = useState(false);
+    const [orders, setOrders] = useOrders();
 
-    const handleStatus = () => {
-        setDelivered(!delivered);
+    const handleDelete = (id) => {
+        fetch(`http://localhost:5000/deleteOrder/${id}`, {
+            method: 'DELETE'
+        })
+            .then(res => res.json())
+            .then(data => console.log(data))
+        const remaining = orders.filter(order => order._id !== id);
+        setOrders(remaining);
     }
+
+
     return (
         <div className='md:mx-16'>
             <div className='flex justify-center md:justify-start'>
@@ -32,7 +40,7 @@ const ManageOrders = () => {
                             <td className='text-center'>{order.clientName}</td>
                             <td className='text-center'>{order.productName}</td>
                             <td className='text-center'>{order.quantity}</td>
-                            <td className='text-center'><button onClick={() => handleStatus(order._id)} className='bg-pink-600 px-3 py-2 text-white rounded-lg' disabled={delivered}>{delivered ? "Delivered" : "Pending"}</button></td>
+                            <td className='text-center'><button onClick={() => handleDelete(order._id)} className='bg-pink-600 px-3 py-2 text-white rounded-lg'><XIcon className='w-6 h-6'></XIcon></button></td>
                         </tr>
                         )
                     }

@@ -2,7 +2,8 @@ import React, { useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import './Register.css';
-import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSendEmailVerification, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { toast } from 'react-toastify';
 
 const Register = () => {
     const [agree, setAgree] = useState(false);
@@ -13,6 +14,7 @@ const Register = () => {
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
     const [signInWithGoogle, userGoogle, loadingGoogle, errorGoogle] = useSignInWithGoogle(auth);
+    const [sendEmailVerification, sending, errorVerification] = useSendEmailVerification(auth);
     const formRef = useRef();
     const navigate = useNavigate();
 
@@ -25,12 +27,13 @@ const Register = () => {
 
         if (password === confirmPassword) {
             await createUserWithEmailAndPassword(email, password);
+            await sendEmailVerification(email);
+            toast("Check your mail to verify your account");
             if (user) {
                 user.displayName = name;
             }
             formRef.current.reset();
         }
-
     }
 
     const handleGoogleSignIn = () => {

@@ -11,7 +11,7 @@ const useOrders = () => {
                 console.log(data)
             })
     }, [])
-    return [orders]
+    return [orders, setOrders]
 };
 
 export default useOrders;
