@@ -45,7 +45,7 @@ const AddNewItem = () => {
                     <input className='w-1/2 md:w-1/3' type="text" name="supplier" placeholder='Supplier Name' /> <br />
                     <input className='w-1/2 md:w-1/3' type="text" name="image" placeholder='Image Link' /> <br />
                     <textarea className='w-1/2 md:w-1/3' name="description" placeholder='Description'></textarea> <br />
-                    <input className='bg-pink-600 p-3 rounded-lg text-white mt-2 w-10/12 md:w-1/3' type="submit" value="+ Add Product" />
+                    <input className='bg-gray-800 p-3 rounded-lg text-white mt-2 w-10/12 md:w-1/3' type="submit" value="+ Add Product" />
                 </form>
             </div>
         </div>

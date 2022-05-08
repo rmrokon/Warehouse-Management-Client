@@ -15,7 +15,7 @@ const Inventory = () => {
             </div>
             <div className='flex justify-center'>
                 <Link to={'/manageInventory'}>
-                    <button className='bg-pink-600 p-3 rounded-lg text-white mt-2'>Manage Inventories</button>
+                    <button className='bg-gray-800 p-3 rounded-lg text-white mt-2'>Manage Inventories</button>
                 </Link>
             </div>
         </div>

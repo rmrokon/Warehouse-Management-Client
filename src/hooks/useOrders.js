@@ -4,11 +4,10 @@ const useOrders = () => {
     const [orders, setOrders] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/orders')
+        fetch('https://imanage24.herokuapp.com/orders')
             .then(res => res.json())
             .then(data => {
                 setOrders(data);
-                console.log(data)
             })
     }, [])
     return [orders, setOrders]

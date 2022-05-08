@@ -13,7 +13,7 @@ const AddOrders = () => {
 
         const order = { clientName, productName, quantity };
 
-        fetch("http://localhost:5000/addorder", {
+        fetch("https://imanage24.herokuapp.com/addorder", {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -38,7 +38,7 @@ const AddOrders = () => {
                         }
                     </select><br />
                     <input className='w-1/2 md:w-1/3 border-2 border-black rounded' type="number" name="quantity" placeholder='Enter Quantity' required /> <br />
-                    <input className='bg-pink-600 p-3 rounded-lg text-white mt-2 w-10/12 md:w-1/3' type="submit" value="+ Add Order" />
+                    <input className='bg-gray-800 p-3 rounded-lg text-white mt-2 w-10/12 md:w-1/3' type="submit" value="+ Add Order" />
                 </form>
             </div>
         </div>

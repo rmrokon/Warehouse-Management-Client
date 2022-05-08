@@ -50,7 +50,7 @@ const Login = () => {
                     <p>New to imanage? <Link className='text-blue-600' to={'/register'}>Create New Account</Link></p>
                     <p className='text-blue-600 cursor-pointer' onClick={handleForgotPass}>Forgot Password?</p>
                     {error && <p>{error.message}</p>}
-                    <input className='bg-pink-600 p-3 rounded-lg text-white mt-2' type="submit" value="Login" />
+                    <input className='bg-gray-800 p-3 rounded-lg text-white mt-2' type="submit" value="Login" />
                 </form>
 
             </div>
@@ -60,7 +60,7 @@ const Login = () => {
                 <div className='line-div' />
             </div>
             <div className='flex justify-center'>
-                <button onClick={handleGoogleSignIn} className='bg-pink-600 p-3 rounded-lg text-white mt-2 md:w-1/3'>Sign in With Google</button>
+                <button onClick={handleGoogleSignIn} className='bg-gray-800 p-3 rounded-lg text-white mt-2 md:w-1/3'>Sign in With Google</button>
             </div>
         </div>
     );

@@ -7,8 +7,8 @@ const Orders = () => {
     const [orders] = useOrders();
     return (
         <div className='md:mx-16'>
-            <h3 className='text-3xl text-center my-2 '>Orders</h3>
-            <h3 className='text-2xl text-center'>Total Orders:{orders.length}</h3>
+            <h3 className='text-center text-3xl font-bold text-gray-600'>Orders</h3>
+            <h3 className='text-xl text-center my-3'>Total Orders:{orders.length}</h3>
 
             <table>
                 <thead>
@@ -36,7 +36,7 @@ const Orders = () => {
             </table>
             <div className='flex justify-center'>
                 <Link to={'/manageOrders'}>
-                    <button className='bg-pink-600 p-3 rounded-lg text-white mt-2'>Manage Orders</button>
+                    <button className='bg-gray-800 p-3 rounded-lg text-white mt-2'>Manage Orders</button>
                 </Link>
             </div>
 

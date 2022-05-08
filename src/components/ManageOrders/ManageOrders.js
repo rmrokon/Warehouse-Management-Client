@@ -8,7 +8,7 @@ const ManageOrders = () => {
     const [orders, setOrders] = useOrders();
 
     const handleDelete = (id) => {
-        fetch(`http://localhost:5000/deleteOrder/${id}`, {
+        fetch(`https://imanage24.herokuapp.com/deleteOrder/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
@@ -21,7 +21,7 @@ const ManageOrders = () => {
     return (
         <div className='md:mx-16'>
             <div className='flex justify-center md:justify-start'>
-                <Link to={'/addNewOrder'}><button className='bg-pink-600 p-3 rounded-lg text-white mt-2'>+ Add New Order</button></Link>
+                <Link to={'/addNewOrder'}><button className='bg-gray-800 p-3 rounded-lg text-white mt-2'>+ Add New Order</button></Link>
             </div>
             <h3 className='text-2xl text-center my-5'>Total Orders: {orders.length}</h3>
 
@@ -40,7 +40,7 @@ const ManageOrders = () => {
                             <td className='text-center'>{order.clientName}</td>
                             <td className='text-center'>{order.productName}</td>
                             <td className='text-center'>{order.quantity}</td>
-                            <td className='text-center'><button onClick={() => handleDelete(order._id)} className='bg-pink-600 px-3 py-2 text-white rounded-lg'><XIcon className='w-6 h-6'></XIcon></button></td>
+                            <td className='text-center'><button onClick={() => handleDelete(order._id)} className='bg-gray-800 px-3 py-2 text-white rounded-lg'><XIcon className='w-6 h-6'></XIcon></button></td>
                         </tr>
                         )
                     }

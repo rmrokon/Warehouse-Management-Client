@@ -58,7 +58,7 @@ const Register = () => {
                     </div>
                     <p>Alreade have an account? <Link className='text-blue-600' to={'/login'}>Login</Link></p>
                     {error && <p>{error.message}</p>}
-                    <input className='bg-pink-600 p-3 rounded-lg text-white mt-2' type="submit" value="Register" disabled={!agree} />
+                    <input className='bg-gray-800 p-3 rounded-lg text-white mt-2' type="submit" value="Register" disabled={!agree} />
                 </form>
             </div>
 
@@ -69,7 +69,7 @@ const Register = () => {
                 <div className='line-div' />
             </div>
             <div className='flex justify-center'>
-                <button onClick={handleGoogleSignIn} className='bg-pink-600 p-3 rounded-lg text-white mt-2 w-1/3'>Sign in With Google</button>
+                <button onClick={handleGoogleSignIn} className='bg-gray-800 p-3 rounded-lg text-white mt-2 w-1/3'>Sign in With Google</button>
             </div>
         </div>
     );

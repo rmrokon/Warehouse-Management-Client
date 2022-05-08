@@ -9,7 +9,7 @@ const MyItems = () => {
 
     useEffect(() => {
         const email = user?.email;
-        const url = `http://localhost:5000/getProductsByEmail?email=${email}`;
+        const url = `https://imanage24.herokuapp.com/getProductsByEmail?email=${email}`;
 
         const getProductsByEmail = async () => {
             const { data } = await axios(url);
@@ -54,7 +54,7 @@ const MyItems = () => {
                             <td className='text-center'>{product.price}</td>
                             <td className='text-center'>{product.quantity}</td>
                             <td className='text-center'>{product.supplier}</td>
-                            <td className='text-center'><button onClick={() => handleDelete(product._id)} className='bg-pink-600 px-3 py-2 text-white rounded-lg'>X</button></td>
+                            <td className='text-center'><button onClick={() => handleDelete(product._id)} className='bg-gray-800 px-3 py-2 text-white rounded-lg'>X</button></td>
                         </tr>
                         )
                     }

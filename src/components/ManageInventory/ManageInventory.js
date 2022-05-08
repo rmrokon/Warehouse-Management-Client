@@ -22,9 +22,9 @@ const ManageInventory = () => {
         }
     }
     return (
-        <div className='md:mx-16'>
+        <div className='md:mx-16 my-10'>
             <div className='flex justify-center md:justify-start'>
-                <Link to={'/addnewitem'}><button className='bg-pink-600 p-3 rounded-lg text-white mt-2'>+ Add New Item</button></Link>
+                <Link to={'/addnewitem'}><button className='bg-gray-800 p-3 rounded-lg text-white mt-2'>+ Add New Item</button></Link>
             </div>
             <h3 className='text-2xl text-center my-5'>Total Product: {products.length}</h3>
 
@@ -45,7 +45,7 @@ const ManageInventory = () => {
                             <td className='text-center'>{product.price}</td>
                             <td className='text-center'>{product.quantity}</td>
                             <td className='text-center'>{product.supplier}</td>
-                            <td className='text-center'><button onClick={() => handleDelete(product._id)} className='bg-pink-600 px-3 py-2 text-white rounded-lg'>X</button></td>
+                            <td className='text-center'><button onClick={() => handleDelete(product._id)} className='bg-gray-800 px-3 py-2 text-white rounded-lg'>X</button></td>
                         </tr>
                         )
                     }

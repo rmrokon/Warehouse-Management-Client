@@ -17,7 +17,7 @@ const SingleProduct = ({ _id, name, img, description, supplier, price, quantity 
                 <h4 className='mb-2'>Stock Available: {quantity}</h4>
                 <h4 className='mb-2'>Supplier: {supplier}</h4>
                 <p>{description.slice(0, 100)} <span title={description}>...</span></p>
-                <button onClick={() => navigateToProductDetails(_id)} className='bg-pink-600 p-3 rounded-lg text-white mt-2'>Update</button>
+                <button onClick={() => navigateToProductDetails(_id)} className='bg-gray-800 p-3 rounded-lg text-white mt-2'>Update</button>
             </div>
 
         </div>

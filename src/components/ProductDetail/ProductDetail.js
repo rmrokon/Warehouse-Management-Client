@@ -71,13 +71,13 @@ const ProductDetail = () => {
                 <div className='flex justify-center place-items-center my-5'>
                     <form className='w-full text-center' onSubmit={handleUpdateQuantity} ref={formRef}>
                         <input className='border w-2/3 rounded-md text-center h-16' type="number" name="quantity" placeholder='Enter Quantity' /> <br />
-                        <input className='bg-pink-600 p-3 rounded-lg text-white mt-2' type="submit" value="Update Quantity" />
+                        <input className='bg-gray-800 p-3 rounded-lg text-white mt-2' type="submit" value="Update Quantity" />
                     </form>
                 </div>
             </div>
             <div className='flex justify-center my-10'>
                 <Link to={'/manageInventory'}>
-                    <button className='bg-pink-600 p-3 rounded-lg text-white mt-2'>Manage Inventories</button>
+                    <button className='bg-gray-800 p-3 rounded-lg text-white mt-2'>Manage Inventories</button>
                 </Link>
             </div>
         </div>

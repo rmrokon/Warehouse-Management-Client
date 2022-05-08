@@ -23,15 +23,13 @@ const NavBar = () => {
 
                 <li><Link to={'/blog'}>Blog</Link></li>
 
-                <li>{user && <Link to={'/inventory'}>Inventory</Link>}</li>
-
                 <li>{user && <Link to={'/manageInventory'}>Manage Inventory</Link>}</li>
 
                 <li>{user && <Link to={'/myItems'}>My Items</Link>}</li>
 
                 <li>{!user && <Link to={'/register'}>Register</Link>}</li>
 
-                <li className='bg-blue-600 text-white rounded-md px-2 py-1'>{user ? <Link to={'/login'} onClick={logout}>Logout</Link> : <Link to={'/Login'}>Login</Link>}</li>
+                <li>{user ? <Link to={'/login'} onClick={logout}>Logout</Link> : <Link to={'/Login'}>Login</Link>}</li>
 
             </ul>
         </div>
