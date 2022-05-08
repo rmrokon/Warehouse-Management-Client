@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
@@ -27,6 +28,8 @@ const Login = () => {
         setEmail(e.target.email.value);
         const password = e.target.password.value;
         await signInWithEmailAndPassword(email, password);
+        const { data } = await axios.post("http://localhost:5000/login", { email })
+        localStorage.setItem('accessToken', data.accessToken)
         navigate(from, { replace: true });
     }
 
