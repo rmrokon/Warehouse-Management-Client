@@ -18,12 +18,48 @@ const MyItems = () => {
             }
         }
         getProductsByEmail();
-    }, [])
+    }, [user?.email])
+
+    const handleDelete = (id) => {
+        const confirmDelete = window.confirm("Are you sure you want delete the product?");
+        if (confirmDelete) {
+            fetch(`https://imanage24.herokuapp.com/deleteProduct/${id}`, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+
+                })
+            const remaining = productsByEmail.filter(product => product._id !== id);
+            setProductsByEmail(remaining);
+        }
+    }
     return (
         <div>
-            {
-                productsByEmail.map(product => <h3>{product.name}</h3>)
-            }
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Supplier</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        productsByEmail.map(product => <tr key={product._id}>
+                            <td>{product.name}</td>
+                            <td className='text-center'>{product.price}</td>
+                            <td className='text-center'>{product.quantity}</td>
+                            <td className='text-center'>{product.supplier}</td>
+                            <td className='text-center'><button onClick={() => handleDelete(product._id)} className='bg-pink-600 px-3 py-2 text-white rounded-lg'>X</button></td>
+                        </tr>
+                        )
+                    }
+                </tbody>
+            </table>
         </div>
     );
 };

@@ -14,6 +14,7 @@ import ManageOrders from "./components/ManageOrders/ManageOrders";
 import AddOrders from "./components/AddOrders/AddOrders";
 import Charts from "./components/Charts/Charts";
 import MyItems from "./components/MyItems/MyItems";
+import Blog from "./components/Blog/Blog";
 
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
         <Route path="/addNewOrder" element={<AddOrders></AddOrders>}></Route>
         <Route path="/charts" element={<Charts></Charts>}></Route>
         <Route path="/myItems" element={<MyItems></MyItems>}></Route>
+        <Route path="/blog" element={<Blog></Blog>}></Route>
       </Routes>
       <ToastContainer></ToastContainer>
     </div>

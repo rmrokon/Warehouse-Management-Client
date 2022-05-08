@@ -21,6 +21,8 @@ const NavBar = () => {
             <ul className={`md:flex md:items-center md:py-0 py-7 md:static absolute bg-white md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-10 transition-all duration-500 ease-in ${open ? 'top-10' : 'top-[-490px]'}`}>
                 <li><Link to={'/home'}>Home</Link></li>
 
+                <li><Link to={'/blog'}>Blog</Link></li>
+
                 <li>{user && <Link to={'/inventory'}>Inventory</Link>}</li>
 
                 <li>{user && <Link to={'/manageInventory'}>Manage Inventory</Link>}</li>

@@ -16,18 +16,18 @@ const Footer = () => {
                         <div className="mb-5">
                             <ul>
                                 <li><Link to={'/home'}>Home</Link></li>
+                                <li><Link to={'/blog'}>Blog</Link></li>
                                 <li><Link to={'/aboutus'}>About Us</Link></li>
                                 {
-                                    user && <li>Manage Order</li>
+                                    user && <li><Link to={'/manageOrders'}>Manage Order</Link></li>
                                 }
                                 {
-                                    user && <li>Manage Inventory</li>
+                                    user && <li><Link to={'/manageInventory'}>Manage Inventory</Link></li>
                                 }
                                 {
-                                    user && <li>My Items</li>
+                                    user && <li><Link to={'/myItems'}>My Items</Link></li>
                                 }
 
-                                <li>Blog</li>
                             </ul>
                         </div>
                         <div className="mb-5">
