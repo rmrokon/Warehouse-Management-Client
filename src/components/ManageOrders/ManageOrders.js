@@ -1,4 +1,4 @@
-import { XIcon } from '@heroicons/react/solid';
+import { TrashIcon, XIcon } from '@heroicons/react/solid';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import useOrders from '../../hooks/useOrders';
@@ -20,7 +20,7 @@ const ManageOrders = () => {
 
 
     return (
-        <div className='md:mx-16'>
+        <div className='md:mx-16 my-5'>
             <div className='flex justify-center md:justify-start'>
                 <Link to={'/addNewOrder'}><button className='bg-gray-800 p-3 rounded-lg text-white mt-2'>+ Add New Order</button></Link>
             </div>
@@ -41,7 +41,7 @@ const ManageOrders = () => {
                             <td className='text-center'>{order.clientName}</td>
                             <td className='text-center'>{order.productName}</td>
                             <td className='text-center'>{order.quantity}</td>
-                            <td className='text-center'><button onClick={() => handleDelete(order._id)} className='bg-gray-800 px-3 py-2 text-white rounded-lg'><XIcon className='w-6 h-6'></XIcon></button></td>
+                            <td className='text-center'><button onClick={() => handleDelete(order._id)} className='bg-gray-800 px-2 py-2 text-white rounded-lg'><TrashIcon className='w-5 h-5 hover:text-red-600'></TrashIcon></button></td>
                         </tr>
                         )
                     }

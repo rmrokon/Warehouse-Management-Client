@@ -25,6 +25,8 @@ const NavBar = () => {
 
                 <li>{user && <Link to={'/manageInventory'}>Manage Inventory</Link>}</li>
 
+                <li>{user && <Link to={'/manageOrders'}>Manage Orders</Link>}</li>
+
                 <li>{user && <Link to={'/myItems'}>My Items</Link>}</li>
 
                 <li>{!user && <Link to={'/register'}>Register</Link>}</li>

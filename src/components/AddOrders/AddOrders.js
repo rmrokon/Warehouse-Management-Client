@@ -28,13 +28,13 @@ const AddOrders = () => {
     }
     return (
         <div className='my-5'>
-            <h3 className='text-2xl text-center underline font-thin text-pink-600'>Fill up the form and add a new order!</h3>
+            <h3 className='text-2xl text-center underline font-thin text-gray-800'>Fill up the form and add a new order!</h3>
             <div className='flex justify-center place-items-center my-5 w-full'>
                 <form className='w-full text-center' onSubmit={handleAddNewOrder} ref={formRef}>
                     <input className='w-1/2 md:w-1/3 border-2 border-black rounded' type="text" name="name" placeholder='Client Name' required /> <br />
                     <select className='w-1/2 md:w-1/3 border-2 border-black rounded h-12 my-3' name="pname">
                         {
-                            products.map(product => <option value={`${product.name}`}>{product.name}</option>)
+                            products.map(product => <option value={`${product.name}`} key={product._id}>{product.name}</option>)
                         }
                     </select><br />
                     <input className='w-1/2 md:w-1/3 border-2 border-black rounded' type="number" name="quantity" placeholder='Enter Quantity' required /> <br />

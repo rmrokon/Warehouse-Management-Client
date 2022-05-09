@@ -49,8 +49,8 @@ const Register = () => {
         navigate('/home');
     }
     return (
-        <div className='mb-5'>
-            <h3 className='text-2xl text-center underline font-thin text-pink-600'>Register</h3>
+        <div className='my-5'>
+            <h3 className='text-2xl text-center underline font-thin text-gray-800'>Register</h3>
             <div className='my-5'>
                 <form className='w-full flex flex-col place-items-center' onSubmit={handleRegister} ref={formRef}>
                     <input className='' type="text" name="name" placeholder='Enter Name' />

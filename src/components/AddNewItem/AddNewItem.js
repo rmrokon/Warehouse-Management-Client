@@ -35,7 +35,7 @@ const AddNewItem = () => {
     }
     return (
         <div>
-            <h3 className='text-2xl text-center underline font-thin text-pink-600'>Fill up the form to add new product!</h3>
+            <h3 className='text-2xl text-center underline font-thin text-gray-800'>Fill up the form to add new product!</h3>
             <div className='flex justify-center place-items-center my-5 w-full'>
                 <form className='w-full text-center' onSubmit={handleAddNewItem} ref={formRef}>
                     <input className='w-1/2 md:w-1/3' type="email" name="email" placeholder='User Email' value={user.email} /> <br />

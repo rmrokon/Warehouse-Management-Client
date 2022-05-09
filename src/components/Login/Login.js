@@ -58,8 +58,8 @@ const Login = () => {
     }
 
     return (
-        <div>
-            <h3 className='text-2xl text-center underline font-thin text-pink-600'>Login</h3>
+        <div className='my-5'>
+            <h3 className='text-2xl text-center underline font-thin text-gray-800'>Login</h3>
             <div className='flex justify-center place-items-center my-5'>
                 <form className='w-full text-center' onSubmit={handleLogin}>
                     <input className='' type="email" name="email" placeholder='Enter Email' onBlur={(e) => setEmail(e.target.value)} /> <br />
