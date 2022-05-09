@@ -36,7 +36,7 @@ const Orders = () => {
             </table>
             <div className='flex justify-center'>
                 <Link to={'/manageOrders'}>
-                    <button className='bg-gray-800 p-3 rounded-lg text-white mt-2'>Manage Orders</button>
+                    <button className='bg-gray-800 p-3 rounded-lg text-white my-10'>Manage Orders</button>
                 </Link>
             </div>
 
