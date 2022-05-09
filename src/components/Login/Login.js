@@ -14,10 +14,11 @@ const Login = () => {
         signInWithEmailAndPassword,
         user,
         loading,
-        error,
+        errorEmailSignIn,
     ] = useSignInWithEmailAndPassword(auth);
     const [signInWithGoogle, userGoogle, loadingGoogle, errorGoogle] = useSignInWithGoogle(auth);
     const [sendPasswordResetEmail, sending, errorPassReset] = useSendPasswordResetEmail(auth);
+
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -30,6 +31,9 @@ const Login = () => {
         await signInWithEmailAndPassword(email, password);
         const { data } = await axios.post("https://imanage24.herokuapp.com/login", { email })
         localStorage.setItem('accessToken', data.accessToken)
+
+    }
+    if (user) {
         navigate(from, { replace: true });
     }
 
@@ -39,8 +43,10 @@ const Login = () => {
     }
 
     const handleForgotPass = async () => {
-        await sendPasswordResetEmail(email);
-        toast("Email Sent");
+        if (email) {
+            await sendPasswordResetEmail(email);
+            toast("Email Sent");
+        }
     }
 
     return (
@@ -52,7 +58,9 @@ const Login = () => {
                     <input className='' type="password" name="password" placeholder='Enter Password' /> <br />
                     <p>New to imanage? <Link className='text-blue-600' to={'/register'}>Create New Account</Link></p>
                     <p className='text-blue-600 cursor-pointer' onClick={handleForgotPass}>Forgot Password?</p>
-                    {error && <p>{error.message}</p>}
+                    {errorEmailSignIn && <p className='text-red-400'>{errorEmailSignIn.message}</p>}
+                    {errorGoogle && <p className='text-red-400'>{errorGoogle.message}</p>}
+                    {errorPassReset && <p className='text-red-400'>{errorPassReset.message}</p>}
                     <input className='bg-gray-800 p-3 rounded-lg text-white mt-2' type="submit" value="Login" />
                 </form>
 
