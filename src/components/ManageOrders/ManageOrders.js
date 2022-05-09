@@ -1,11 +1,12 @@
 import { XIcon } from '@heroicons/react/solid';
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import useOrders from '../../hooks/useOrders';
 import './ManageOrders.css';
 
 const ManageOrders = () => {
     const [orders, setOrders] = useOrders();
+
 
     const handleDelete = (id) => {
         fetch(`https://imanage24.herokuapp.com/deleteOrder/${id}`, {
