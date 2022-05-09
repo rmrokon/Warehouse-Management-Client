@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 import './AddNewItem.css';
@@ -34,7 +35,10 @@ const AddNewItem = () => {
             })
     }
     return (
-        <div>
+        <div className='md:mx-16 my-10'>
+            <div className='flex justify-center md:justify-start'>
+                <Link to={'/manageInventory'}><button className='bg-gray-800 p-3 rounded-lg text-white mt-2'>Return to Manage Inventory</button></Link>
+            </div>
             <h3 className='text-2xl text-center underline font-thin text-gray-800'>Fill up the form to add new product!</h3>
             <div className='flex justify-center place-items-center my-5 w-full'>
                 <form className='w-full text-center' onSubmit={handleAddNewItem} ref={formRef}>

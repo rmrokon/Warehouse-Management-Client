@@ -54,7 +54,7 @@ const ProductDetail = () => {
 
 
     return (
-        <div className=''>
+        <div className='my-10'>
             <div className='grid grid-cols-1 lg:grid-cols-2'>
                 <div className='border-2 rounded-md w-2/3 mx-auto'>
                     <img className='border-2 w-1/4 rounded-md mx-auto my-3' src={img} alt="" />
