@@ -5,6 +5,7 @@ import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
+import Spinner from '../Spinner/Spinner';
 import './Login.css';
 
 
@@ -17,7 +18,7 @@ const Login = () => {
         errorEmailSignIn,
     ] = useSignInWithEmailAndPassword(auth);
     const [signInWithGoogle, userGoogle, loadingGoogle, errorGoogle] = useSignInWithGoogle(auth);
-    const [sendPasswordResetEmail, sending, errorPassReset] = useSendPasswordResetEmail(auth);
+    const [sendPasswordResetEmail, errorPassReset] = useSendPasswordResetEmail(auth);
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -33,13 +34,20 @@ const Login = () => {
         localStorage.setItem('accessToken', data.accessToken)
 
     }
-    if (user) {
+
+    if (loading || loadingGoogle) {
+        return <Spinner></Spinner>;
+    }
+
+    if (user || userGoogle) {
         navigate(from, { replace: true });
     }
 
     const handleGoogleSignIn = async () => {
         await signInWithGoogle();
-        navigate(from, { replace: true });
+        if (!errorGoogle) {
+            navigate(from, { replace: true });
+        }
     }
 
     const handleForgotPass = async () => {

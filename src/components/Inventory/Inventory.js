@@ -1,9 +1,21 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import useProducts from '../../hooks/useProducts';
 import SingleProduct from '../SingleProducts/SingleProduct';
+import Spinner from '../Spinner/Spinner';
 
 const Inventory = () => {
     const [products] = useProducts();
+
+
+    // if (reload) {
+    //     return <Spinner></Spinner>
+    // }
+    // if (products) {
+    //     console.log(reload);
+    //     setReload(!reload);
+    // }
+
 
     return (
         <div className='my-10'>

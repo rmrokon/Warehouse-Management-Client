@@ -4,6 +4,7 @@ import auth from '../../firebase.init';
 import './Register.css';
 import { useCreateUserWithEmailAndPassword, useSendEmailVerification, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
+import Spinner from '../Spinner/Spinner';
 
 const Register = () => {
     const [agree, setAgree] = useState(false);
@@ -14,7 +15,7 @@ const Register = () => {
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
     const [signInWithGoogle, userGoogle, loadingGoogle, errorGoogle] = useSignInWithGoogle(auth);
-    const [sendEmailVerification, sending, errorVerification] = useSendEmailVerification(auth);
+    const [sendEmailVerification, errorVerification] = useSendEmailVerification(auth);
     const formRef = useRef();
     const navigate = useNavigate();
 
@@ -34,6 +35,10 @@ const Register = () => {
             }
             formRef.current.reset();
         }
+    }
+
+    if (loading || loadingGoogle) {
+        return <Spinner></Spinner>
     }
 
     const handleGoogleSignIn = () => {
@@ -58,6 +63,8 @@ const Register = () => {
                     </div>
                     <p>Alreade have an account? <Link className='text-blue-600' to={'/login'}>Login</Link></p>
                     {error && <p>{error.message}</p>}
+                    {errorGoogle && <p>{errorGoogle.message}</p>}
+                    {errorVerification && <p>{errorVerification.message}</p>}
                     <input className='bg-gray-800 p-3 rounded-lg text-white mt-2' type="submit" value="Register" disabled={!agree} />
                 </form>
             </div>
