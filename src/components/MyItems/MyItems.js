@@ -12,7 +12,11 @@ const MyItems = () => {
         const url = `https://imanage24.herokuapp.com/getProductsByEmail?email=${email}`;
 
         const getProductsByEmail = async () => {
-            const { data } = await axios(url);
+            const { data } = await axios(url, {
+                headers: {
+                    authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                }
+            });
             if (data) {
                 setProductsByEmail(data);
             }
